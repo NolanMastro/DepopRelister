@@ -15,6 +15,7 @@ clear = lambda: os.system('clear')
 load_dotenv()
 
 
+
 def login(EMAIL, PASSWORD, driver):
     clear()
     print(f'Status: Logging into {username}')
@@ -111,6 +112,7 @@ def relist(driver):
             time.sleep(0.2)
             driver.get(f'https://depop.com/{username}')
     print(f'Complete! Successfuly saved {completed}/{listingCount} to drafts.')
+    #error
 
     
 
@@ -186,13 +188,13 @@ initialize()
 login(email, password, driver)
 
 while True:
-    try:
+    #try:
         relist(driver)
         deleteActive(driver)
         postDrafts(driver)
         print(f"Successfuly relisted {username}'s entire account")
         break
-    except:
+   # except: disabled for now.
         clearAccount(driver)
 
 
